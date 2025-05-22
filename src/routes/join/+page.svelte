@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { ImageUp } from '@lucide/svelte';
 
-	let step = $state(2);
+	let step = $state(1);
 </script>
 
 <main class="relative h-screen w-screen">
@@ -17,7 +17,8 @@
 			{/if}
 		</div>
 		{#if step === 0}
-			<button class="w-[80%] rounded-lg bg-black py-3 font-semibold text-white"
+			<button
+				class="w-[80%] cursor-pointer rounded-lg bg-black py-3 font-semibold text-white transition duration-300 hover:bg-gray-900 focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:outline-none active:scale-[0.99] active:bg-gray-900"
 				>Connect Wallet</button
 			>
 		{:else if step === 1}
@@ -43,15 +44,18 @@
 					/>
 				</div>
 
-				<button class="w-full rounded-lg bg-black py-3 font-semibold text-white">Next</button>
+				<button
+					class="w-full rounded-lg bg-black py-3 font-semibold text-white transition duration-300 hover:bg-gray-900 focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:outline-none active:scale-[0.99] active:bg-gray-900"
+					>Next</button
+				>
 			</div>
 		{:else if step === 2}
 			<div class="w-full space-y-6 px-10">
 				<div class="mb-8 flex items-center space-x-2">
-					<div class="relative h-20 w-20 rounded-full border border-gray-800">
+					<div class="relative h-20 w-20 rounded-full ring-2 ring-gray-300">
 						<ImageUp
 							class="absolute top-1/2 left-1/2 -z-10 -translate-1/2"
-							color="black"
+							color="#ABABAB"
 							size="36px"
 							strokeWidth="1.5"
 						/>
@@ -70,14 +74,17 @@
 					<p class="absolute right-3 bottom-3 text-sm font-medium text-gray-500">1/100</p>
 				</div>
 
-				<button class="w-full rounded-lg bg-black py-3 font-semibold text-white">Generate</button>
+				<button
+					class="w-full rounded-lg bg-black py-3 font-semibold text-white transition duration-300 hover:bg-gray-900 focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:outline-none active:scale-[0.99] active:bg-gray-900"
+					>Generate</button
+				>
 			</div>
 		{/if}
 		<p class="mt-2 text-center text-xs text-gray-400">
-			By signing up, you agree to our <span class="border-b border-b-gray-300"
+			By signing up, you agree to our <span class="border-b border-b-gray-400"
 				>Terms of Service</span
 			>
-			and <span class="border-b border-b-gray-300">Privacy Policy</span>.
+			and <span class="border-b border-b-gray-400">Privacy Policy</span>.
 		</p>
 	</section>
 

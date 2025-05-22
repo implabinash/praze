@@ -1,5 +1,9 @@
 <script lang="ts">
 	let isHovered = $state(false);
+
+	const handleClick = () => {
+		alert!('sign in');
+	};
 </script>
 
 <svelte:head>
@@ -26,35 +30,19 @@
 	<nav>
 		<ul class="hidden items-center md:flex">
 			<!-- <li>
-					<a href="#" class="px-4 py-2">Home</a>
-				</li>
-
-				<li>
-					<a href="#" class="px-4 py-2">Features</a>
-				</li>
-
-				<li>
-					<a href="#" class="px-4 py-2">Pricing</a>
-				</li>
-
-				<li>
-					<a href="#" class="px-4 py-2">Gallery</a>
-				</li>
-
-				<li>
 					<a href="#" class="px-4 py-2">Community</a>
 				</li> -->
 
 			<li>
 				<button
-					class="ml-4 cursor-pointer rounded-full border-2 border-gray-200 px-4 py-2 text-black transition-colors"
-					>Sign In</button
+					class="ml-4 cursor-pointer rounded-full px-3 py-[0.37rem] text-black ring-2 ring-gray-300 transition duration-300 hover:bg-gray-100 hover:shadow-sm focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:outline-none active:scale-95 active:bg-gray-200"
+					onclick={handleClick}>Sign In</button
 				>
 			</li>
 			<li>
 				<a
 					href="/join"
-					class="ml-4 cursor-pointer rounded-full border-2 border-black bg-black px-4 py-2 text-white transition-colors hover:bg-gray-800"
+					class="ml-4 cursor-pointer rounded-full bg-black px-4 py-2 text-white shadow-lg transition duration-300 hover:bg-gray-900 focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:outline-none active:scale-95 active:bg-gray-900"
 					>Get Started</a
 				>
 			</li>
@@ -71,16 +59,17 @@
 				Your Work Deserves More Than Likes
 			</h1>
 			<p class="mb-8 text-lg text-gray-600">
-				Let fans send you real tips on-chain. No sign-ups, no middlemen.<br /> Receive crypto tips directly
-				in your wallet.
+				Let fans send you real tips on-chain. No sign-ups, no middlemen.<br
+					class="hidden lg:inline"
+				/> Receive crypto tips directly in your wallet.
 			</p>
 
 			<!-- Buttons -->
 			<div class="mb-2 flex flex-wrap gap-4">
-				<button
+				<a
 					href="/join"
-					class="cursor-pointer rounded-full bg-black px-8 py-3 font-medium text-white transition-colors hover:bg-gray-800"
-					>Join Praze</button
+					class="cursor-pointer rounded-full bg-black px-8 py-3 font-medium text-white transition duration-300 hover:bg-gray-900 focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:outline-none active:scale-95 active:bg-gray-900"
+					>Join Praze</a
 				>
 
 				<button
