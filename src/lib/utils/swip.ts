@@ -4,8 +4,8 @@ import { stringToU8a, u8aToHex } from '@polkadot/util';
 import { signatureVerify } from '@polkadot/util-crypto';
 import { v4 as uuidv4 } from 'uuid';
 
-const dappName = 'Dotme';
-const uri = 'https://Dot.me';
+const dappName = 'Praze';
+const uri = 'https://Praze.me';
 
 type SignInResult = {
 	success: boolean;

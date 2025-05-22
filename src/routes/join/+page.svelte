@@ -1,61 +1,89 @@
 <script lang="ts">
+	import { ImageUp } from '@lucide/svelte';
+
+	let step = $state(2);
 </script>
 
-<main class="grid h-screen w-screen grid-cols-1 md:grid-cols-2">
-	<div class="flex items-center justify-center text-center">
-		<div class="w-[80%] md:w-[50%]">
-			<img src="images/logo.svg" alt="Praze Logo" height="50px" width="50px" class="mx-auto mb-8" />
+<main class="relative h-screen w-screen">
+	<section
+		class="absolute top-1/2 left-1/2 flex h-2/3 w-1/3 -translate-1/2 flex-col items-center justify-between rounded-lg bg-white p-6 shadow-2xl"
+	>
+		<div class="w-full">
+			<img src="images/logo.svg" alt="Praze Logo" height="48px" width="48px" class="mx-auto mb-4" />
 
-			<p class="mb-1 text-lg font-bold">Welcom to, Praze</p>
-			<p class="mb-8 text-gray-500">Receive crypto tips directly in your wallet.</p>
-
-			<div class="grid w-full items-center gap-6">
-				<div class="flex flex-col space-y-1.5">
-					<lable for="name">Name</lable>
+			<h2 class="text-center text-2xl font-semibold">Welcome to Praze</h2>
+			{#if step === 0}
+				<p class="text-center text-gray-500">Receive tips from your supporters hassle free.</p>
+			{/if}
+		</div>
+		{#if step === 0}
+			<button class="w-[80%] rounded-lg bg-black py-3 font-semibold text-white"
+				>Connect Wallet</button
+			>
+		{:else if step === 1}
+			<div class="w-full space-y-6 px-10">
+				<div class="flex flex-col space-y-2">
+					<label for="username" class="font-semibold">Username</label>
 					<input
+						type="text"
+						id="username"
+						class="w-full rounded-lg border border-gray-400 px-3 py-3"
+						placeholder="Username"
+					/>
+					<p class="text-xs font-semibold text-red-500">Username is not available.</p>
+				</div>
+
+				<div class="mb-8 flex flex-col space-y-2">
+					<label for="name" class="font-semibold">Name</label>
+					<input
+						type="text"
 						id="name"
 						placeholder="Your Name"
-						type="email"
-						class="h-12 border-2 border-gray-300"
+						class="w-full rounded-lg border border-gray-400 px-3 py-3"
 					/>
 				</div>
 
-				<div class="flex flex-col space-y-1.5">
-					<lable for="username">Username</lable>
-					<input
-						id="username"
-						placeholder="Username"
-						type="text"
-						class="h-12 border-2 border-gray-300"
-					/>
-				</div>
-
-				<div class="flex flex-col space-y-1.5">
-					<label for="address">Address</label>
-					<input
-						id="address"
-						placeholder="Address"
-						type="text"
-						class="h-12 border-2 border-gray-300"
-					/>
-				</div>
-
-				<div class="mt-2 grid w-full grid-cols-2 gap-4">
-					<button class="h-12 active:scale-[99%]">Back</button>
-					<button class="h-12 active:scale-[99%]">Next</button>
-				</div>
+				<button class="w-full rounded-lg bg-black py-3 font-semibold text-white">Next</button>
 			</div>
+		{:else if step === 2}
+			<div class="w-full space-y-6 px-10">
+				<div class="mb-8 flex items-center space-x-2">
+					<div class="relative h-20 w-20 rounded-full border border-gray-800">
+						<ImageUp
+							class="absolute top-1/2 left-1/2 -z-10 -translate-1/2"
+							color="black"
+							size="36px"
+							strokeWidth="1.5"
+						/>
+						<input type="file" id="image" alt="User image" class="h-full w-full text-white" />
+					</div>
+					<label for="image" class="font-semibold">Choose an image </label>
+				</div>
 
-			<p class="mt-20 text-xs text-gray-500">
-				By creating an account, you agree to our <span class="border-b border-b-gray-400"
-					>terms of service</span
-				>.
-			</p>
+				<div class="relative mb-8 flex flex-col space-y-2">
+					<label for="about" class="font-semibold">About</label>
+					<textarea
+						id="about"
+						placeholder="About Yourself.."
+						class="w-full rounded-lg border border-gray-400 px-3 py-3"
+					></textarea>
+					<p class="absolute right-3 bottom-3 text-sm font-medium text-gray-500">1/100</p>
+				</div>
+
+				<button class="w-full rounded-lg bg-black py-3 font-semibold text-white">Generate</button>
+			</div>
+		{/if}
+		<p class="mt-2 text-center text-xs text-gray-400">
+			By signing up, you agree to our <span class="border-b border-b-gray-300"
+				>Terms of Service</span
+			>
+			and <span class="border-b border-b-gray-300">Privacy Policy</span>.
+		</p>
+	</section>
+
+	<section class="h-screen rounded-2xl p-4">
+		<div class="h-full w-full rounded-2xl">
+			<img src="images/1.jpeg" alt="lgo" class="h-full w-full rounded-2xl object-cover" />
 		</div>
-	</div>
-	<div class="relative hidden h-screen w-full self-stretch bg-black md:block">
-		<div class="flex h-full w-full items-center justify-center">
-			<img src="images/login-1.jpeg" alt="Logo" class="h-full w-full object-cover" />
-		</div>
-	</div>
+	</section>
 </main>

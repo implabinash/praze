@@ -1,6 +1,6 @@
 // To Connect with wallet
 
-const appName = 'Dotme';
+const appName = 'Praze';
 
 export async function connectWallet() {
 	if (typeof window === 'undefined') {
