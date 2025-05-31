@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { ImageUp } from '@lucide/svelte';
 
-	let step = $state(1);
+	let step = $state(2);
 </script>
 
 <main class="relative h-screen w-screen">
@@ -18,7 +18,7 @@
 		</div>
 		{#if step === 0}
 			<button
-				class="w-[80%] cursor-pointer rounded-lg bg-black py-3 font-semibold text-white transition duration-300 hover:bg-gray-900 focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:outline-none active:scale-[0.99] active:bg-gray-900"
+				class="w-[80%] cursor-pointer rounded-lg bg-black py-3 font-semibold text-white transition duration-300 hover:bg-gray-900 focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:outline-none active:scale-[0.99]"
 				>Connect Wallet</button
 			>
 		{:else if step === 1}
@@ -45,23 +45,31 @@
 				</div>
 
 				<button
-					class="w-full rounded-lg bg-black py-3 font-semibold text-white transition duration-300 hover:bg-gray-900 focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:outline-none active:scale-[0.99] active:bg-gray-900"
+					class="w-full cursor-pointer rounded-lg bg-black py-3 font-semibold text-white transition duration-300 hover:bg-gray-900 focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:outline-none active:scale-[0.99]"
 					>Next</button
 				>
 			</div>
 		{:else if step === 2}
 			<div class="w-full space-y-6 px-10">
 				<div class="mb-8 flex items-center space-x-2">
-					<div class="relative h-20 w-20 rounded-full ring-2 ring-gray-300">
+					<label
+						for="image"
+						class="relative h-20 w-20 cursor-pointer rounded-full ring-2 ring-gray-400"
+					>
 						<ImageUp
 							class="absolute top-1/2 left-1/2 -z-10 -translate-1/2"
 							color="#ABABAB"
 							size="36px"
 							strokeWidth="1.5"
 						/>
-						<input type="file" id="image" alt="User image" class="h-full w-full text-white" />
-					</div>
-					<label for="image" class="font-semibold">Choose an image </label>
+						<input
+							type="file"
+							alt="User image"
+							class="hidden h-full w-full text-white"
+							id="image"
+						/>
+					</label>
+					<p class="font-semibold">Choose an image</p>
 				</div>
 
 				<div class="relative mb-8 flex flex-col space-y-2">
@@ -75,7 +83,7 @@
 				</div>
 
 				<button
-					class="w-full rounded-lg bg-black py-3 font-semibold text-white transition duration-300 hover:bg-gray-900 focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:outline-none active:scale-[0.99] active:bg-gray-900"
+					class="w-full cursor-pointer rounded-lg bg-black py-3 font-semibold text-white transition duration-300 hover:bg-gray-900 focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:outline-none active:scale-[0.99]"
 					>Generate</button
 				>
 			</div>
