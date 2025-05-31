@@ -1,10 +1,8 @@
-# Praze: Empower Creators with On-Chain Tipping
+![Praze Banner](static/images/gh-banner.png)
 
-## Welcome to Praze
+# Welcome to Praze
 
 Praze is more than a platform—it's a movement. We’re here to empower creators by making it effortless for them to receive support from their communities across multiple blockchains. No sign-ups, no fees, 100% on-chain. Just pure, transparent support.
-
----
 
 ## Features That Define Us
 
